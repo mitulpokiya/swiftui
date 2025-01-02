@@ -13,3 +13,13 @@ extension View {
     } 
   } 
 } 
+
+
+//Use case
+
+if item.done { 
+  Text(item.text) 
+    .strikethrough() 
+} else { 
+  Text(item.text)    
+} 
