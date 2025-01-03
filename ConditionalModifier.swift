@@ -17,9 +17,20 @@ extension View {
 
 //Use case
 
-if item.done { 
-  Text(item.text) 
-    .strikethrough() 
-} else { 
-  Text(item.text)    
-} 
+struct ContentView: View {
+    @State private var isHighlighted = true
+
+    var body: some View {
+        Text("Hello, SwiftUI!")
+            .font(.title)
+            .if(isHighlighted) { view in
+                view
+                    .foregroundColor(.red)
+                    .bold()
+            }
+            .padding()
+            .onTapGesture {
+                isHighlighted.toggle()
+            }
+    }
+}
